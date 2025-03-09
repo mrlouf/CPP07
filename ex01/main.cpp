@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 19:22:47 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/09 19:52:50 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/09 21:05:05 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void capitalise(char &c)
 int	main()
 {
 	{
-		std::cout << "\033[31mTest negating integers\033[0m" << std::endl;
+		std::cout << "\033[31mTest negating integers using template function\033[0m" << std::endl;
 		int arr[] = {1, 2, 3, 4, 5};
 		size_t len = 5;
 
@@ -38,7 +38,7 @@ int	main()
 		std::cout << std::endl;
 	}
 	{
-		std::cout << "\033[31mTest capitalising chars\033[0m" << std::endl;
+		std::cout << "\033[31mTest capitalising chars using wrapper function\033[0m" << std::endl;
 		char arr[] = {'a', 'b', 'c', 'd', 'e'};
 		size_t len = 5;
 
