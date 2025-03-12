@@ -5,7 +5,7 @@ NAME 		= array
 # -=-=-=-=-    FLAG -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= #
 
 CC			= c++
-FLAGS		= -Werror -Wall -Wextra -std=c++98 -Wshadow -pedantic -fsanitize=address -fsanitize=leak
+FLAGS		= -Werror -Wall -Wextra -std=c++98 -Wshadow -pedantic -g#-fsanitize=address -fsanitize=leak
 
 RM			= rm -fr
 
@@ -22,6 +22,9 @@ OBJS		= $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
 # -=-=-=-=-    TARGETS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 all: $(NAME)
+
+leak:
+	@valgrind --leak-check=full ./$(NAME)
 
 $(OBJDIR)/%.o: %.cpp Makefile $(HEADERS)
 	@mkdir -p $(@D)
