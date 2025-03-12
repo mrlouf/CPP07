@@ -6,24 +6,27 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 17:03:29 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/12 14:01:10 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:35:59 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
 template <typename T>
-Array<T>::Array() : _elem(new T[0]), _size(0) {}
+Array<T>::Array() : _elem(NULL), _size(0) {}
 
 template <typename T>
-Array<T>::Array(const Array &other) {
-	*this = other;
+Array<T>::Array(const Array &other) : _elem(NULL), _size(0) {
+    _size = other._size;
+    _elem = new T[_size];
+    for (unsigned int i = 0; i < _size; i++)
+        _elem[i] = other._elem[i];
 }
 
 template <typename T>
 Array<T> &Array<T>::operator=(const Array<T> &other) {
 	if (this != &other) {
-		//delete _elem;
+		delete[] this->_elem;
 		_size = other._size;
 		_elem = new T[_size];
 		for (unsigned int i = 0; i < _size; i++)
@@ -54,4 +57,9 @@ Array<T>::Array(const unsigned int n) {
 template <typename T>
 const char* Array<T>::OutOfBoundsException::what() const throw() {
 	return "index is out of bounds";
+}
+
+template <typename T>
+unsigned int Array<T>::size() const {
+	return _size;
 }

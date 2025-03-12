@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 21:13:41 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/12 13:44:02 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/12 14:52:29 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Array {
 		~Array();
 
 		Array(const unsigned int n);
+
+		unsigned int size() const;
 
 		T &operator[](const unsigned int i);
 
