@@ -6,7 +6,7 @@
 /*   By: nponchon <nponchon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/09 21:10:12 by nponchon          #+#    #+#             */
-/*   Updated: 2025/03/12 15:28:47 by nponchon         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:39:03 by nponchon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ int main(int, char**)
         
         Array<int> arrAssigned;
         arrAssigned = arr1;
-        std::cout << "Test 6: Assignment operator" << std::endl;
+        std::cout << "Test 6: test for leaks" << std::endl;
         
         std::cout << "arrAssigned[0] = " << arrAssigned[0] << std::endl;
         std::cout << "arrAssigned[1] = " << arrAssigned[1] << std::endl;
